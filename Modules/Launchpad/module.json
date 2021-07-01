@@ -1,0 +1,14 @@
+{
+    "name": "Launchpad",
+    "alias": "launchpad",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Epigra\\Launchpad\\Providers\\LaunchpadServiceProvider",
+        "Epigra\\Launchpad\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

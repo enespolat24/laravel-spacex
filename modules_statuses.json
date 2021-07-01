@@ -1,4 +1,7 @@
 {
     "Sapiens": true,
-    "Core": true
+    "Core": true,
+    "Launchpad": true,
+    "Payload": true,
+    "Launch": true
 }

@@ -1,0 +1,14 @@
+{
+    "name": "Payload",
+    "alias": "payload",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Epigra\\Payload\\Providers\\PayloadServiceProvider",
+        "Epigra\\Payload\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

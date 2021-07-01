@@ -1,0 +1,14 @@
+{
+    "name": "Launch",
+    "alias": "launch",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Epigra\\Launch\\Providers\\LaunchServiceProvider",
+        "Epigra\\Launch\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
