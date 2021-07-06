@@ -15,7 +15,10 @@ class CreatePayloadsTable extends Migration
     {
         Schema::create('payloads', function (Blueprint $table) {
             $table->id();
-
+            $table->string('provider_id');
+            $table->string('type');
+            $table->string('launch');
+            $table->boolean('reused');
             $table->timestamps();
         });
     }

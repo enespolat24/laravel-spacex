@@ -15,7 +15,17 @@ class CreateLaunchpadsTable extends Migration
     {
         Schema::create('launchpads', function (Blueprint $table) {
             $table->id();
-
+            $table->string('provider_id');
+            $table->string('full_name');
+            $table->string('name')->nullable();
+            $table->string('status')->nullable();
+            $table->string('locality')->nullable();
+            $table->string('region');
+            $table->string('timezone')->nullable();
+            $table->float('latitude')->nullable();
+            $table->float('longitude')->nullable();
+            $table->integer('launch_attempts')->nullable();
+            $table->integer('launch_successes')->nullable();
             $table->timestamps();
         });
     }

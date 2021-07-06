@@ -24,9 +24,19 @@ class LaunchDTO extends BaseDTO
     public int $id;
 
     /**
-     * @var int
+     * @var string
      */
-    public int $sample;
+    public string $provider_id;
+
+    /**
+     * @var string
+     */
+    public string $details;
+
+    /**
+     * @var string
+     */
+    public string $name;
 
     /**
      * @param $dto

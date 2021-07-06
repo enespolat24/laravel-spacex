@@ -15,7 +15,9 @@ class CreateLaunchesTable extends Migration
     {
         Schema::create('launches', function (Blueprint $table) {
             $table->id();
-
+            $table->string('provider_id')->unique();
+            $table->string('name');
+            $table->string('details')->nullable();
             $table->timestamps();
         });
     }

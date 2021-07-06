@@ -24,9 +24,24 @@ class LaunchpadDTO extends BaseDTO
     public int $id;
 
     /**
-     * @var int
+     * @var string
      */
-    public int $sample;
+    public string $provider_id;
+
+    /**
+     * @var string
+     */
+    public string $full_name;
+
+    /**
+     * @var string
+     */
+    public string $region;
+
+    /**
+     * @var string
+     */
+    public string $details;
 
     /**
      * @param $dto

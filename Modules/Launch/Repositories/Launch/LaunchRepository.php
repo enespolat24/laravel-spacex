@@ -14,4 +14,5 @@ class LaunchRepository extends BaseEloquentRepository implements LaunchRepositor
     {
         parent::__construct(Launch::class);
     }
+
 }

@@ -3,5 +3,6 @@
     "Core": true,
     "Launchpad": true,
     "Payload": true,
-    "Launch": true
+    "Launch": true,
+    "Fetcher": true
 }

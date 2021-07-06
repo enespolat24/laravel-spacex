@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,3 +12,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::Get('/asd/{id}',function ($id){
+
+
+    $response = Http::get('https://api.spacexdata.com/v4/launchpads/'.$id);
+    return $response->json('full_name');
+});

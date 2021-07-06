@@ -24,9 +24,24 @@ class PayloadDTO extends BaseDTO
     public int $id;
 
     /**
-     * @var int
+     * @var string
      */
-    public int $sample;
+    public string $provider_id;
+
+    /**
+     * @var string
+     */
+    public string $type;
+
+    /**
+     * @var string
+     */
+    public string $launch;
+
+    /**
+     * @var bool
+     */
+    public bool $reused;
 
     /**
      * @param $dto

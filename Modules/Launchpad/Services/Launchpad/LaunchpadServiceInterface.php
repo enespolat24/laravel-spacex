@@ -4,6 +4,7 @@ namespace Epigra\Launchpad\Services\Launchpad;
 
 use Epigra\Launchpad\Models\Launchpad;
 use Epigra\Core\Services\Base\BaseServiceInterface;
+use Illuminate\Support\Facades\Http;
 
 /**
  * Interface LaunchpadServiceInterface
@@ -11,5 +12,5 @@ use Epigra\Core\Services\Base\BaseServiceInterface;
  */
 interface LaunchpadServiceInterface extends BaseServiceInterface
 {
-
+    public function getLaunchpadsFromApi():array;
 }

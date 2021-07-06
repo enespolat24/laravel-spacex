@@ -9,14 +9,14 @@
         "url": "https://morpheus.epigra.codes"
     }],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0",
         "epigra/core": "^11.0",
         "epigra/morpheus": "^10.1",
         "epigra/multilang": "dev-master",
         "epigra/sapiens": "^10.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^8.40",
         "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5"

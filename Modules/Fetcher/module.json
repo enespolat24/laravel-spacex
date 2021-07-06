@@ -1,0 +1,14 @@
+{
+    "name": "Fetcher",
+    "alias": "fetcher",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Epigra\\Fetcher\\Providers\\FetcherServiceProvider",
+        "Epigra\\Fetcher\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
