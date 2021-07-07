@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::Get('/launches/{id}', function ($id) {
-    $response = Http::get('https://api.spacexdata.com/v4/launches/' . $id);
-    return $response->body();
+Route::Get('/launches', function () {
+    $launches = DB::select('select * from launches');
+    foreach ($launches as $data) {
+
+        echo $data->name . '<br>';
+        echo $data->provider_id .'<br>' ;
+        echo $data->success . '<br>';
+        echo '=======================<br>';
+    }
+
 });

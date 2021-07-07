@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 /*
@@ -12,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::Get('/asd/{id}',function ($id){
+Route::Get('/launchpads',function() {
 
 
-    $response = Http::get('https://api.spacexdata.com/v4/launchpads/'.$id);
-    return $response->json('full_name');
+    $launcpads = DB::select('select * from launchpads');
+    return $launcpads;
 });

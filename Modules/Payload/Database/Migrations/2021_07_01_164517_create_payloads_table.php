@@ -17,7 +17,7 @@ class CreatePayloadsTable extends Migration
             $table->id();
             $table->string('provider_id');
             $table->string('type');
-            $table->string('launch');
+            $table->string('launch')->nullable();
             $table->boolean('reused');
             $table->timestamps();
         });

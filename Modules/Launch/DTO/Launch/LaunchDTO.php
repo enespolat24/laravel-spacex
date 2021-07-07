@@ -3,6 +3,7 @@
 namespace Epigra\Launch\DTO\Launch;
 
 use Epigra\Core\DTO\Base\BaseDTO;
+use phpDocumentor\Reflection\Types\Nullable;
 
 /**
  * Class LaunchDTO
@@ -29,9 +30,19 @@ class LaunchDTO extends BaseDTO
     public string $provider_id;
 
     /**
+     * @var ?bool
+     */
+    public ?bool $success;
+
+    /**
+     * @var ?string
+     */
+    public ?string $details;
+
+    /**
      * @var string
      */
-    public string $details;
+    public string $auto_update;
 
     /**
      * @var string

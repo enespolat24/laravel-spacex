@@ -57,17 +57,17 @@ class getDataFromApi extends Command
         $this->setLaunches();
         $this->setLaunchpads();
         $this->setPayloads();
+
         return 0;
     }
 
     private function setLaunches()
     {
         $data = $this->launchService->getLaunchesFromApi();
-        foreach ($data as $launch)
-        {
+        foreach ($data as $launch) {
             $dto = new LaunchDTO($launch);
             $dto->provider_id = $launch['id'];
-//            $dto->launchpad_id = $launch['launchpad'];
+            $dto->success = $launch['success'];
             $this->launchService->create($dto);
         }
     }
@@ -75,30 +75,25 @@ class getDataFromApi extends Command
     private function setLaunchpads()
     {
         $data = $this->launchpadService->getLaunchpadsFromApi();
-        foreach ($data as $launchpad)
-        {
+        foreach ($data as $launchpad) {
 
 
             $dto = new LaunchpadDTO($launchpad);
             $dto->provider_id = $launchpad['id'];
             $this->launchpadService->create($dto);
 
-            if($launchpad["launches"])
-            {
-                foreach ($launchpad["launches"] as $item)
-                {
+            if ($launchpad["launches"]) {
+                foreach ($launchpad["launches"] as $item) {
                     $launch = $this->launchService->getLaunchById($item);
                 }
             }
-
         }
     }
 
     private function setPayloads()
     {
         $data = $this->payloadService->getPayloadsFromApi();
-        foreach ($data as $payload)
-        {
+        foreach ($data as $payload) {
             $dto = new PayloadDTO($payload);
             $dto->provider_id = $payload['id'];
             $this->payloadService->create($dto);

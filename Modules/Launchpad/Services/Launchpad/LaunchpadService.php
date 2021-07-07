@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Http;
 
 class LaunchpadService extends BaseService implements LaunchpadServiceInterface
 {
-    private FetcherService $fetcher;
+
     /**
      * @var LaunchpadRepositoryInterface
      */
@@ -21,7 +21,6 @@ class LaunchpadService extends BaseService implements LaunchpadServiceInterface
     /**
      * LaunchpadService constructor.
      * @param LaunchpadRepositoryInterface $repository
-     * @param $fetcher
      */
     public function __construct(LaunchpadRepositoryInterface $repository)
     {

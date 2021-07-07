@@ -34,9 +34,9 @@ class PayloadDTO extends BaseDTO
     public string $type;
 
     /**
-     * @var string
+     * @var ?string
      */
-    public string $launch;
+    public ?string $launch;
 
     /**
      * @var bool
