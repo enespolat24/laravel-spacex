@@ -11,6 +11,7 @@ class Launchpad extends Model
         "id",
         "provider_id",
         "status",
+        "name",
         "payloads",
         "full_name",
         'locality',
@@ -24,6 +25,6 @@ class Launchpad extends Model
 
     public function launch(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Launch::class);
+        return $this->hasMany(Launch::class,'launch_id','provider_id');
     }
 }

@@ -67,7 +67,7 @@ class getDataFromApi extends Command
         foreach ($data as $launch) {
             $dto = new LaunchDTO($launch);
             $dto->provider_id = $launch['id'];
-            $dto->success = $launch['success'];
+            $dto->launchpad_id = $launch['launchpad'];
             $this->launchService->create($dto);
         }
     }
@@ -80,6 +80,7 @@ class getDataFromApi extends Command
 
             $dto = new LaunchpadDTO($launchpad);
             $dto->provider_id = $launchpad['id'];
+            $dto->name = $launchpad['name'];
             $this->launchpadService->create($dto);
 
             if ($launchpad["launches"]) {
@@ -96,6 +97,7 @@ class getDataFromApi extends Command
         foreach ($data as $payload) {
             $dto = new PayloadDTO($payload);
             $dto->provider_id = $payload['id'];
+            $dto->launch_id = $payload['launch'];
             $this->payloadService->create($dto);
         }
     }

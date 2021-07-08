@@ -18,6 +18,7 @@ class CreateLaunchesTable extends Migration
             $table->string('provider_id')->unique();
             $table->string('name');
             $table->string('auto_update');
+            $table->string('launchpad_id');
             $table->boolean('success')->nullable();
             $table->longText('details')->nullable();
             $table->timestamps();

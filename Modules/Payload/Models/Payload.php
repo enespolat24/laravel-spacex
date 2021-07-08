@@ -19,6 +19,6 @@ class Payload extends Model
 
     public function launch(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Launch::class);
+        return $this->belongsTo(Launch::class,'launch_id','provider_id');
     }
 }

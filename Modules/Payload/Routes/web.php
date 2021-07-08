@@ -11,10 +11,3 @@
 |
 */
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
-
-Route::Get('/payloads', function () {
-    $payload = DB::select('select * from payloads');
-    return $payload;
-});

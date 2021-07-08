@@ -44,6 +44,46 @@ class LaunchpadDTO extends BaseDTO
     public string $details;
 
     /**
+     * @var string
+     */
+    public string $name;
+
+    /**
+     * @var string
+     */
+    public string $launch_successes;
+
+    /**
+     * @var string
+     */
+    public string $status;
+
+    /**
+     * @var string
+     */
+    public string $locality;
+
+    /**
+     * @var string
+     */
+    public string $timezone;
+
+    /**
+     * @var string
+     */
+    public string $launch_attempts;
+
+    /**
+     * @var string
+     */
+    public string $latitude;
+
+    /**
+     * @var string
+     */
+    public string $longitude;
+
+    /**
      * @param $dto
      * @param array $originalData
      * @return LaunchpadDTO

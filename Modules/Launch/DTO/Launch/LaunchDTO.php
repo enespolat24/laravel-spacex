@@ -40,6 +40,11 @@ class LaunchDTO extends BaseDTO
     public ?string $details;
 
     /**
+     * @var ?string
+     */
+    public ?string $launchpad_id;
+
+    /**
      * @var string
      */
     public string $auto_update;

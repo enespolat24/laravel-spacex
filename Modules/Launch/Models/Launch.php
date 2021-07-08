@@ -18,13 +18,13 @@ class Launch extends Model
         "launchpad_id"
     ];
 
-    public function launchpad(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function launchpad(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(Launchpad::class);
+        return $this->belongsTo(Launchpad::class,'launchpad_id','provider_id');
     }
 
-    public function Payload(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function payload(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Payload::class);
+        return $this->hasMany(Payload::class,'provider_id','payload_id');
     }
 }

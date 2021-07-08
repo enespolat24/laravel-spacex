@@ -14,14 +14,4 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::Get('/launches', function () {
-    $launches = DB::select('select * from launches');
-    foreach ($launches as $data) {
 
-        echo $data->name . '<br>';
-        echo $data->provider_id .'<br>' ;
-        echo $data->success . '<br>';
-        echo '=======================<br>';
-    }
-
-});

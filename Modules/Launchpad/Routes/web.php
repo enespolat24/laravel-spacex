@@ -13,9 +13,4 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::Get('/launchpads',function() {
 
-
-    $launcpads = DB::select('select * from launchpads');
-    return $launcpads;
-});
