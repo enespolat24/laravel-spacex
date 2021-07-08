@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Payload extends Model
 {
     protected $fillable = [
-        "id",
         "provider_id",
         "orbit",
         "type",

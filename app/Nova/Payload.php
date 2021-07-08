@@ -3,8 +3,8 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -26,7 +26,7 @@ class Payload extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'provider_id';
 
     /**
      * The columns that should be searched.
@@ -49,10 +49,8 @@ class Payload extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('UDID'),'provider_id'),
             Text::make(__('type'),'type'),
-            Text::make(__('launch UDID'),'launch_id'),
             Boolean::make(__('reused'),'reused')->sortable(),
-            HasOne::make('launch'),
-
+            BelongsTo::make('Launch','launch',Launch::class),
         ];
     }
 

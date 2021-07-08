@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Launchpad extends Model
 {
     protected $fillable = [
-        "id",
         "provider_id",
         "status",
         "name",
@@ -25,6 +24,6 @@ class Launchpad extends Model
 
     public function launch(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Launch::class,'launch_id','provider_id');
+        return $this->hasMany(Launch::class,'launchpad_id','provider_id');
     }
 }

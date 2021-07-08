@@ -25,6 +25,6 @@ class Launch extends Model
 
     public function payload(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Payload::class,'provider_id','payload_id');
+        return $this->hasMany(Payload::class,'launch_id','provider_id');
     }
 }

@@ -52,14 +52,14 @@ class Launchpad extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('UDID'), 'provider_id'),
-            Text::make(__('full name'), 'full_name'),
-            Text::make(__('name'), 'name')->sortable(),
-            Text::make(__('status'), 'status')->sortable(),
-            Text::make(__('locality'), 'locality'),
-            Text::make(__('region'), 'region'),
-            Number::make(__('latitude'), 'latitude'),
-            Number::make(__('longitude'), 'longitude'),
-            HasMany::make(__('launches'))
+            Text::make(__('Full name'), 'full_name'),
+            Text::make(__('Name'), 'name')->sortable(),
+            Text::make(__('Status'), 'status')->sortable(),
+            Text::make(__('Locality'), 'locality'),
+            Text::make(__('Region'), 'region'),
+            Number::make(__('Latitude'), 'latitude'),
+            Number::make(__('Longitude'), 'longitude'),
+            HasMany::make(__('Launches'),'launch',Launch::class),
         ];
     }
 

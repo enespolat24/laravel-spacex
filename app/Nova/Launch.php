@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -24,7 +25,7 @@ class Launch extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -46,11 +47,13 @@ class Launch extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__("UDID"), "provider_id"),
-            Boolean::make(__("auto update"), "auto_update"),
-            Text::make(__("launchpad id"), "launchpad_id"),
-            Boolean::make(__("success"), "success")->sortable(),
-            Text::make(__("details"), "details"),
-            HasMany::make('Payloads'),
+            Boolean::make(__("Auto update"), "auto_update"),
+            Text::make(__("Name"), "name"),
+//            Text::make(__("Launchpad id"), "launchpad_id"),
+            Boolean::make(__("Success"), "success")->sortable(),
+            Text::make(__("Details"), "details"),
+            HasMany::make('Payloads','payload',Payload::class),
+            BelongsTo::make('Launchpad','launchpad',Launchpad::class),
         ];
     }
 
