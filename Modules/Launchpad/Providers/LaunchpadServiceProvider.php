@@ -2,8 +2,14 @@
 
 namespace Epigra\Launchpad\Providers;
 
+use App\Nova\Launchpad;
+use App\Nova\Payload;
+use DigitalCreative\CollapsibleResourceManager\CollapsibleResourceManager;
+use DigitalCreative\CollapsibleResourceManager\Resources\TopLevelResource;
+use Epigra\Launch\Models\Launch;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Laravel\Nova\Nova;
 
 class LaunchpadServiceProvider extends ServiceProvider
 {
@@ -108,5 +114,25 @@ class LaunchpadServiceProvider extends ServiceProvider
             }
         }
         return $paths;
+    }
+    public static function registerNova()
+    {
+        Nova::resources(
+            [
+                Launchpad::class,
+            ]
+        );
+
+        Nova::tools([
+            new CollapsibleResourceManager([
+                'navigation' => [
+                    TopLevelResource::make([
+                        'label' => __('Launchpad'),
+                        'linkTo' => Launchpad::class,
+                        'icon' => '',
+                    ]),
+                ],
+            ]),
+        ]);
     }
 }

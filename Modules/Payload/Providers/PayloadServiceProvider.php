@@ -2,8 +2,14 @@
 
 namespace Epigra\Payload\Providers;
 
+use App\Nova\Launchpad;
+use App\Nova\Payload;
+use DigitalCreative\CollapsibleResourceManager\CollapsibleResourceManager;
+use DigitalCreative\CollapsibleResourceManager\Resources\TopLevelResource;
+use Epigra\Launch\Models\Launch;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Laravel\Nova\Nova;
 
 class PayloadServiceProvider extends ServiceProvider
 {
@@ -108,5 +114,26 @@ class PayloadServiceProvider extends ServiceProvider
             }
         }
         return $paths;
+    }
+
+    public static function registerNova()
+    {
+        Nova::resources(
+            [
+                Payload::class,
+            ]
+        );
+
+        Nova::tools([
+            new CollapsibleResourceManager([
+                'navigation' => [
+                    TopLevelResource::make([
+                        'label' => __('Payload'),
+                        'icon' => '',
+                        'linkTo' => Payload::class
+                    ]),
+                ],
+            ]),
+        ]);
     }
 }
