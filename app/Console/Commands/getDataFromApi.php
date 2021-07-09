@@ -3,16 +3,13 @@
 namespace App\Console\Commands;
 
 use Epigra\Launch\DTO\Launch\LaunchDTO;
-use Epigra\Launch\Services\Launch\LaunchService;
 use Epigra\Launch\Services\Launch\LaunchServiceInterface;
 use Epigra\Launchpad\DTO\Launchpad\LaunchpadDTO;
-use Epigra\Launchpad\Services\Launchpad\LaunchpadService;
 use Epigra\Launchpad\Services\Launchpad\LaunchpadServiceInterface;
 use Epigra\Payload\DTO\Payload\PayloadDTO;
-use Epigra\Payload\Services\Payload\PayloadService;
 use Epigra\Payload\Services\Payload\PayloadServiceInterface;
 use Illuminate\Console\Command;
-use Illuminate\Console\Scheduling\Schedule;
+
 
 class getDataFromApi extends Command
 {

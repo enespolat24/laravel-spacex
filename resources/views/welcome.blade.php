@@ -11,131 +11,122 @@
 
         <!-- Styles -->
         <style>
-
-            .login-page {
-                width: 360px;
-                padding: 8% 0 0;
-                margin: auto;
+            #scroll-animate
+            {
+                overflow: hidden;
             }
 
-            .form {
+            #scroll-animate-main
+            {
+                width: 100%;
+                left: 0;
+                position: fixed;
+            }
+
+            #heightPage,
+            #heightScroll
+            {
+                width: 10px;
+                top: 0;
+                position: absolute;
+                z-index: 99;
+            }
+
+            #heightPage
+            {
+                left: 0;
+            }
+
+            #heightScroll
+            {
+                right: 0;
+            }
+
+            header
+            {
+                width: 100%;
+                height: 100%;
+                background: url(https://raw.githubusercontent.com/hudsonmarinho/header-and-footer-parallax-effect/master/assets/images/bg-header.jpg) no-repeat 50% 50%;
+                top: 0;
+                position: fixed;
+                z-index: -1;
+            }
+
+            footer
+            {
+                width: 100%;
+                height: 300px;
+                background: gray;
+                bottom: -300px;
+                position: fixed;
+                z-index: -1;
+            }
+
+            .content
+            {
+                height: 1000px;
+                min-height: 1000px;
+                background: #ededed;
                 position: relative;
                 z-index: 1;
-                background: #FFFFFF;
-                max-width: 360px;
-                margin: 0 auto 100px;
-                padding: 45px;
-                text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
             }
 
-            .form input {
-                font-family: "Roboto", sans-serif;
-                outline: 0;
-                background: #f2f2f2;
+            .wrapper-parallax {
+                margin-top: 100%;
+                margin-bottom: 300px;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            h1{
                 width: 100%;
-                border: 0;
-                margin: 0 0 15px;
-                padding: 15px;
-                box-sizing: border-box;
-                font-size: 14px;
-            }
-
-            .form button {
-                font-family: "Roboto", sans-serif;
-                text-transform: uppercase;
-                outline: 0;
-                background: #4CAF50;
-                width: 100%;
-                border: 0;
-                padding: 15px;
-                color: #FFFFFF;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            .form button:hover, .form button:active, .form button:focus {
-                background: #43A047;
-            }
-
-            .form .message {
-                margin: 15px 0 0;
-                color: #b3b3b3;
-                font-size: 12px;
-            }
-
-            .form .message a {
-                color: #4CAF50;
-                text-decoration: none;
-            }
-
-            .form .register-form {
-                display: none;
-            }
-
-            .container {
-                position: relative;
-                z-index: 1;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .container:before, .container:after {
-                content: "";
-                display: block;
-                clear: both;
-            }
-
-            .container .info {
-                margin: 50px auto;
-                text-align: center;
-            }
-
-            .container .info h1 {
-                margin: 0 0 15px;
+                height: 100%;
                 padding: 0;
-                font-size: 36px;
-                font-weight: 300;
-                color: #1a1a1a;
+                margin: 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-family: Helvetica, serif;
+                font-size: 150px;
+                color: #fff;
             }
 
-            .container .info span {
-                color: #4d4d4d;
-                font-size: 12px;
+            header h1{}
+
+            .content h1{
+                line-height: 1000px;
+                color: #999;
             }
 
-            .container .info span a {
-                color: #000000;
-                text-decoration: none;
+            footer h1
+            {
+                line-height: 300px;
             }
 
-            .container .info span .fa {
-                color: #EF3B3A;
+            header,
+            footer,
+            #scroll-animate-main
+            {
+                -webkit-transition-property: all;
+                -moz-transition-property: all;
+                transition-property: all;
+
+                -webkit-transition-duration: 0.4s;
+                -moz-transition-duration: 0.4s;
+                transition-duration: 0.4s;
+
+                -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+                -moz-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+                transition-timing-function: cubic-bezier(0, 0, 0, 1);
             }
-
-            body {
-                background: #76b852; /* fallback for old browsers */
-                background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-                background: -moz-linear-gradient(right, #76b852, #8DC26F);
-                background: -o-linear-gradient(right, #76b852, #8DC26F);
-                background: linear-gradient(to left, #76b852, #8DC26F);
-                font-family: "Roboto", sans-serif;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-
-
         </style>
     </head>
     <body>
-    <div class="login-page">
-        <div class="form">
-            <form class="login-form">
-                @csrf
-                <input type="text" placeholder="Id giriniz"/>
-                <button>Bilgileri Getir</button>
-                <p class="message">Id numarasını bilmiyor musunuz ? <a href="#">Buraya tıklayın</a></p>
-            </form>
+    <div id="scroll-animate">
+        <div id="scroll-animate-main">
+            <div class="wrapper-parallax">
+                <header>
+                    <h1>please vısıt /cp</h1>
+                </header>
+            </div>
         </div>
     </div>
     </body>
