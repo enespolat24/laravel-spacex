@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Epigra\Launch\Providers\LaunchServiceProvider;
 use Epigra\Launchpad\Providers\LaunchpadServiceProvider;
-use Epigra\Launchpad\Services\Launchpad\LaunchpadService;
 use Epigra\Payload\Providers\PayloadServiceProvider;
 use Epigra\Sapiens\Providers\SapiensServiceProvider;
 use Illuminate\Support\Facades\Gate;

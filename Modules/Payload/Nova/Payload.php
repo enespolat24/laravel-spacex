@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Nova;
+namespace Epigra\Payload\Nova;
 
+
+use App\Nova\Resource;
+use Epigra\Launch\Nova\Launch;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;

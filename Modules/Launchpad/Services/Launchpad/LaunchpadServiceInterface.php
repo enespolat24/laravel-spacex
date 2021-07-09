@@ -2,6 +2,7 @@
 
 namespace Epigra\Launchpad\Services\Launchpad;
 
+use Epigra\Core\DTO\Base\BaseDTO;
 use Epigra\Launchpad\Models\Launchpad;
 use Epigra\Core\Services\Base\BaseServiceInterface;
 use Illuminate\Support\Facades\Http;
@@ -13,4 +14,6 @@ use Illuminate\Support\Facades\Http;
 interface LaunchpadServiceInterface extends BaseServiceInterface
 {
     public function getLaunchpadsFromApi():array;
+
+//    public function updateOrCreate(BaseDTO $dto): bool;
 }

@@ -41,5 +41,6 @@ class InstallProjectCommand extends Command
         $this->call('sync:sb');
         $this->call('storage:link');
         $this->call('passport:install');
+        $this->call('update:from-api');
     }
 }

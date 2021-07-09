@@ -86,6 +86,7 @@ class getDataFromApi extends Command
             if ($launchpad["launches"]) {
                 foreach ($launchpad["launches"] as $item) {
                     $launch = $this->launchService->getLaunchById($item);
+
                 }
             }
         }

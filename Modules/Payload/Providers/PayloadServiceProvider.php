@@ -2,8 +2,9 @@
 
 namespace Epigra\Payload\Providers;
 
-use App\Nova\Launchpad;
-use App\Nova\Payload;
+
+
+use Epigra\Payload\Nova\Payload;
 use DigitalCreative\CollapsibleResourceManager\CollapsibleResourceManager;
 use DigitalCreative\CollapsibleResourceManager\Resources\TopLevelResource;
 use Epigra\Launch\Models\Launch;

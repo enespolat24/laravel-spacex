@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use App\Models\User as UserModel;
-use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;

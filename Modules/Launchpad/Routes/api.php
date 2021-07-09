@@ -11,6 +11,7 @@
 |
 */
 
-Route::middleware('auth:api')->name('api::')->group(function () {
+
+Route::middleware('api')->name('api::')->group(function () {
     Route::apiResource('launchpad', LaunchpadApiController::class);
 });

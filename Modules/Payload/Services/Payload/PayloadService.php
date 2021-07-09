@@ -2,7 +2,6 @@
 
 namespace Epigra\Payload\Services\Payload;
 
-use Epigra\Fetcher\Services\Fetcher\FetcherService;
 use Epigra\Payload\DTO\Payload\PayloadDTO;
 use Epigra\Payload\Repositories\Payload\PayloadRepositoryInterface;
 use Epigra\Payload\Services\Payload\PayloadServiceInterface;
@@ -15,13 +14,11 @@ class PayloadService extends BaseService implements PayloadServiceInterface
      * @var PayloadRepositoryInterface
      */
     private PayloadRepositoryInterface $repository;
-    private FetcherService $fetcher;
 
 
     /**
      * PayloadService constructor.
      * @param PayloadRepositoryInterface $repository
-     * @param $fetcher
      */
     public function __construct(PayloadRepositoryInterface $repository)
     {
@@ -34,5 +31,10 @@ class PayloadService extends BaseService implements PayloadServiceInterface
     {
         $response = Http::get('https://api.spacexdata.com/v4/payloads/');
         return $response->json();
+    }
+
+    public function updateOrCreate($dto)
+    {
+
     }
 }

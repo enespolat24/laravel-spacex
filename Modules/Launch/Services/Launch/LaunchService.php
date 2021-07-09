@@ -2,8 +2,10 @@
 
 namespace Epigra\Launch\Services\Launch;
 
+use Epigra\Core\DTO\Base\BaseDTO;
 use Epigra\Fetcher\Services\Fetcher\FetcherService;
 use Epigra\Launch\DTO\Launch\LaunchDTO;
+use Epigra\Launch\Models\Launch;
 use Epigra\Launch\Repositories\Launch\LaunchRepositoryInterface;
 use Epigra\Launch\Services\Launch\LaunchServiceInterface;
 use Epigra\Core\Services\Base\BaseService;
@@ -39,5 +41,10 @@ class LaunchService extends BaseService implements LaunchServiceInterface
         $response = Http::get('https://api.spacexdata.com/v4/launches/'.$id);
         return $response->json();
     }
+//    public function updateOrCreate(BaseDTO $dto): bool
+//    {
+//
+//
+//    }
 }
 
