@@ -7,6 +7,7 @@ use Epigra\Launch\Services\Launch\LaunchServiceInterface;
 use Epigra\Launchpad\DTO\Launchpad\LaunchpadDTO;
 use Epigra\Launchpad\Services\Launchpad\LaunchpadServiceInterface;
 use Epigra\Payload\DTO\Payload\PayloadDTO;
+use Epigra\Payload\Models\Payload;
 use Epigra\Payload\Services\Payload\PayloadServiceInterface;
 use Illuminate\Console\Command;
 
@@ -51,8 +52,8 @@ class getDataFromApi extends Command
      */
     public function handle(): int
     {
-        $this->setLaunches();
-        $this->setLaunchpads();
+//        $this->setLaunches();
+//        $this->setLaunchpads();
         $this->setPayloads();
 
         return 0;
@@ -96,7 +97,9 @@ class getDataFromApi extends Command
             $dto = new PayloadDTO($payload);
             $dto->provider_id = $payload['id'];
             $dto->launch_id = $payload['launch'];
-            $this->payloadService->create($dto);
+            $this->payloadService->updateOrCreate([
+                'provider_id' => $dto->provider_id,
+            ],$dto);
         }
     }
 }

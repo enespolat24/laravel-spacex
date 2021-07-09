@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Http;
  */
 interface PayloadServiceInterface extends BaseServiceInterface
 {
-    public function getPayloadsFromApi():array;
+    public function getPayloadsFromApi(): array;
 
-    public function updateOrCreate($dto);
+    public function updateOrCreate(array $attributes, BaseDTO $dto):BaseDTO;
 }

@@ -2,6 +2,7 @@
 
 namespace Epigra\Payload\Services\Payload;
 
+use Epigra\Core\DTO\Base\BaseDTO;
 use Epigra\Payload\DTO\Payload\PayloadDTO;
 use Epigra\Payload\Repositories\Payload\PayloadRepositoryInterface;
 use Epigra\Payload\Services\Payload\PayloadServiceInterface;
@@ -27,14 +28,15 @@ class PayloadService extends BaseService implements PayloadServiceInterface
 
     }
 
-    public function getPayloadsFromApi():array
+    public function getPayloadsFromApi(): array
     {
         $response = Http::get('https://api.spacexdata.com/v4/payloads/');
         return $response->json();
     }
 
-    public function updateOrCreate($dto)
+    public function updateOrCreate(array $attributes, BaseDTO $dto): BaseDTO
     {
-
+        $model = $this->repository->updateOrCreate($attributes, $dto->toModel());
+        return new PayloadDTO($model->toArray());
     }
 }

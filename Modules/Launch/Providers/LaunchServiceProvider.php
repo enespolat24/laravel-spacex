@@ -3,12 +3,9 @@
 namespace Epigra\Launch\Providers;
 
 
-
 use DigitalCreative\CollapsibleResourceManager\CollapsibleResourceManager;
 use DigitalCreative\CollapsibleResourceManager\Resources\TopLevelResource;
-use Epigra\Launch\Nova\Launch;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
 use Laravel\Nova\Nova;
 
 class LaunchServiceProvider extends ServiceProvider
@@ -115,12 +112,11 @@ class LaunchServiceProvider extends ServiceProvider
         }
         return $paths;
     }
+
     public static function registerNova()
     {
         Nova::resources(
-            [
-                Launch::class,
-            ]
+            config('launch.nova_resources')
         );
 
         Nova::tools([
@@ -128,7 +124,7 @@ class LaunchServiceProvider extends ServiceProvider
                 'navigation' => [
                     TopLevelResource::make([
                         'label' => __('Launch'),
-                        'linkTo' => Launch::class,
+                        'linkTo' => config('launch.nova_resources')[0],
                         'icon' => '',
                     ]),
                 ],
