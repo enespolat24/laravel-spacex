@@ -14,6 +14,7 @@ use Illuminate\Console\Command;
 
 class getDataFromApi extends Command
 {
+    
     /**
      * The name and signature of the console command.
      *
