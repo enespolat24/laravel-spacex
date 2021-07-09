@@ -52,8 +52,8 @@ class getDataFromApi extends Command
      */
     public function handle(): int
     {
-//        $this->setLaunches();
-//        $this->setLaunchpads();
+        $this->setLaunches();
+        $this->setLaunchpads();
         $this->setPayloads();
 
         return 0;
@@ -66,7 +66,9 @@ class getDataFromApi extends Command
             $dto = new LaunchDTO($launch);
             $dto->provider_id = $launch['id'];
             $dto->launchpad_id = $launch['launchpad'];
-            $this->launchService->create($dto);
+            $this->launchService->updateOrCreate([
+                'provider_id' => $dto->provider_id,
+            ],$dto);
         }
     }
 
@@ -79,7 +81,9 @@ class getDataFromApi extends Command
             $dto = new LaunchpadDTO($launchpad);
             $dto->provider_id = $launchpad['id'];
             $dto->name = $launchpad['name'];
-            $this->launchpadService->create($dto);
+            $this->launchpadService->updateOrCreate([
+                'provider_id' => $dto->provider_id,
+            ],$dto);
 
             if ($launchpad["launches"]) {
                 foreach ($launchpad["launches"] as $item) {

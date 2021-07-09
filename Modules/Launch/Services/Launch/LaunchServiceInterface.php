@@ -5,6 +5,7 @@ namespace Epigra\Launch\Services\Launch;
 use Epigra\Core\DTO\Base\BaseDTO;
 use Epigra\Launch\Models\Launch;
 use Epigra\Core\Services\Base\BaseServiceInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 
 /**
@@ -17,6 +18,6 @@ interface LaunchServiceInterface extends BaseServiceInterface
 
     public function getLaunchById(string $id): array;
 
-//    public function updateOrCreate(int $id, BaseDTO $dto): bool;
+    public function updateOrCreate(array $attributes, BaseDTO $DTO): BaseDTO;
 
 }

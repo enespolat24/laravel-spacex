@@ -2,6 +2,7 @@
 
 namespace Epigra\Launchpad\Services\Launchpad;
 
+use Epigra\Core\DTO\Base\BaseDTO;
 use Epigra\Fetcher\Services\Fetcher\FetcherService;
 use Epigra\Launchpad\DTO\Launchpad\LaunchpadDTO;
 use Epigra\Launchpad\Repositories\Launchpad\LaunchpadRepositoryInterface;
@@ -27,10 +28,17 @@ class LaunchpadService extends BaseService implements LaunchpadServiceInterface
         parent::__construct($repository, LaunchpadDTO::class);
         $this->repository = $repository;
     }
-    public function getLaunchpadsFromApi():array{
+
+    public function getLaunchpadsFromApi(): array
+    {
         $response = Http::get('https://api.spacexdata.com/v4/launchpads/');
         return $response->json();
 
     }
 
+    public function updateOrCreate(array $attributes, BaseDTO $dto): BaseDTO
+    {
+        $model = $this->repository->updateOrCreate($attributes, $dto->toModel());
+        return new LaunchpadDTO($model->toArray());
+    }
 }

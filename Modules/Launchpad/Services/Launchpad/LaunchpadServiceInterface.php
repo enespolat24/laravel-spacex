@@ -15,5 +15,5 @@ interface LaunchpadServiceInterface extends BaseServiceInterface
 {
     public function getLaunchpadsFromApi():array;
 
-//    public function updateOrCreate(BaseDTO $dto): bool;
+    public function updateOrCreate(array $attributes, BaseDTO $dto):BaseDTO;
 }

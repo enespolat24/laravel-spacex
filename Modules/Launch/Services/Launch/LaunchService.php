@@ -30,21 +30,22 @@ class LaunchService extends BaseService implements LaunchServiceInterface
         parent::__construct($repository, LaunchDTO::class);
         $this->repository = $repository;
     }
-    public function getLaunchesFromApi():array
+
+    public function getLaunchesFromApi(): array
     {
         $response = Http::get('https://api.spacexdata.com/v4/launches/');
         return $response->json();
     }
 
-    public function getLaunchById(string $id):array
+    public function getLaunchById(string $id): array
     {
-        $response = Http::get('https://api.spacexdata.com/v4/launches/'.$id);
+        $response = Http::get('https://api.spacexdata.com/v4/launches/' . $id);
         return $response->json();
     }
-//    public function updateOrCreate(BaseDTO $dto): bool
-//    {
-//
-//
-//    }
+    public function updateOrCreate(array $attributes, BaseDTO $DTO): BaseDTO
+    {
+        $model = $this->repository->updateOrCreate($attributes,$DTO->toModel());
+        return new LaunchDTO($model->toArray());
+    }
 }
 
