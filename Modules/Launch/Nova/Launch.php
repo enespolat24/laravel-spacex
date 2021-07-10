@@ -3,6 +3,7 @@
 namespace Epigra\Launch\Nova;
 
 use App\Nova\Resource;
+use Epigra\Launchpad\Nova\Launchpad;
 use Epigra\Payload\Nova\Payload;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -55,7 +56,7 @@ class Launch extends Resource
             Boolean::make(__("Success"), "success")->sortable(),
             Text::make(__("Details"), "details"),
             HasMany::make('Payloads','payload',Payload::class),
-            BelongsTo::make('Launchpad','launchpad',Launch::class),
+            BelongsTo::make('Launchpad','launchpad',Launchpad::class),
         ];
     }
 
