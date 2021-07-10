@@ -52,7 +52,6 @@ class Launch extends Resource
             Text::make(__("UDID"), "provider_id"),
             Boolean::make(__("Auto update"), "auto_update"),
             Text::make(__("Name"), "name"),
-//            Text::make(__("Launchpad id"), "launchpad_id"),
             Boolean::make(__("Success"), "success")->sortable(),
             Text::make(__("Details"), "details"),
             HasMany::make('Payloads','payload',Payload::class),
