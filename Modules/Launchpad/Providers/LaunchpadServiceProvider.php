@@ -118,9 +118,7 @@ class LaunchpadServiceProvider extends ServiceProvider
     public static function registerNova()
     {
         Nova::resources(
-            [
-                Launchpad::class,
-            ]
+            config('launchpad.nova_resources')
         );
 
         Nova::tools([
@@ -128,7 +126,7 @@ class LaunchpadServiceProvider extends ServiceProvider
                 'navigation' => [
                     TopLevelResource::make([
                         'label' => __('Launchpad'),
-                        'linkTo' => Launchpad::class,
+                        'linkTo' => config('launchpad.nova_resources')[0],
                         'icon' => '',
                     ]),
                 ],

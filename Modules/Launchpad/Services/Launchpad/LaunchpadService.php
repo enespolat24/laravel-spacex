@@ -3,7 +3,6 @@
 namespace Epigra\Launchpad\Services\Launchpad;
 
 use Epigra\Core\DTO\Base\BaseDTO;
-use Epigra\Fetcher\Services\Fetcher\FetcherService;
 use Epigra\Launchpad\DTO\Launchpad\LaunchpadDTO;
 use Epigra\Launchpad\Repositories\Launchpad\LaunchpadRepositoryInterface;
 use Epigra\Launchpad\Services\Launchpad\LaunchpadServiceInterface;

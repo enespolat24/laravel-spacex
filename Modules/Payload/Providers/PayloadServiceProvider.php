@@ -120,9 +120,7 @@ class PayloadServiceProvider extends ServiceProvider
     public static function registerNova()
     {
         Nova::resources(
-            [
-                Payload::class,
-            ]
+            config('payload.nova_resources'),
         );
 
         Nova::tools([
@@ -131,7 +129,7 @@ class PayloadServiceProvider extends ServiceProvider
                     TopLevelResource::make([
                         'label' => __('Payload'),
                         'icon' => '',
-                        'linkTo' => Payload::class
+                        'linkTo' => config('payload.nova_resources')[0]
                     ]),
                 ],
             ]),
